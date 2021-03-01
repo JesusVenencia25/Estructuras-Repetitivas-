@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 4</title>
+    <style>
+        body{
+            background-color: rgb(253, 172, 22);
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>USO CICLO WHILE</h1>
+        <hr size="10" color="b"></hrsize>
+        <br>
+        <br>
+        <h3>FORMULE SU NOMBRE COMPLETO Y SUS NOTAS</h3>
+        <table border="3">
+            <th>Descripcion</th><th>Nombre</th>
+            <tbody>
+                <tr>
+                    <td>NOMBRES</td>
+                    <td>
+                        <input type="text"  name="nom" id="nom" autofocus >
+                    </td>
+                </tr>
+                <tr>
+                    <td>APELLIDOS</td>
+                    <td>
+                        <input type="text"  name="ape" id="ape" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>NOTA 1</td>
+                    <td>
+                        <input type="text"  name="n1" id="n1" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>NOTA 2</td>
+                    <td>
+                        <input type="text"  name="n2" id="n2" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>NOTA 3</td>
+                    <td>
+                        <input type="text"  name="n3" id="n3" >
+                    </td>
+                </tr>
+            </tbody>
+            <table border="3">
+                <tr>
+                    <td>
+                         <button onclick="guardar()">RESULTADO</button>
+                    </td>
+                </tr>
+            </table>
+        </table>
+        <br>
+        <h3>LISTADO DE ESTUDIANTES</h3>
+        <br>
+        <table border="5">
+            <th>NOMBRES</th><th>APELLIDOS</th><th>NOTA 1</th><th>NOTA 2</th><th>NOTA 3</th><th>NOTA Final</th>
+            <tbody id="cuerpo">
+
+            </tbody>
+        </table>
+    </center>
+    <script>
+        var salida='';
+        function guardar(){
+            var nom=document.getElementById('nom').value;
+            var ape=document.getElementById('ape').value;
+            var n1= parseFloat(document.getElementById('n1').value);
+            var n2= parseFloat(document.getElementById('n2').value);
+            var n3= parseFloat(document.getElementById('n3').value);
+            salida +='<tr><td>'+nom+'</td><td>'+ape+'</td><td>'+n1+'</td><td>'+n2+'</td><td>'+n3+'</td><td>'+nf(n1,n2,n3)+'</td></tr>';
+            document.getElementById('cuerpo').innerHTML=salida;
+            limpiarCaja();
+        }
+        function limpiarCaja(){
+            document.getElementById('nom').value='';
+            document.getElementById('ape').value='';
+            document.getElementById('n1').value='';
+            document.getElementById('n2').value='';
+            document.getElementById('n3').value='';
+            document.getElementById('nom').focus();
+        }
+        function nf(n1,n2,n3){
+            return (n1+n2+n3)/3;
+        }
+    </script>
+</body>
+</html>

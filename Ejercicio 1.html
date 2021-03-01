@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 1</title>
+    <style>
+        body{
+            background-color: rgb(0, 255, 170);
+            color: black;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>USO DEL CICLO FOR</h1>
+        <hr size="10" color="b"></hrsize>
+        <br>
+        <br>
+        <table border="5">
+            <th>Numeros= <span id="Numeros"> </span> </th>
+            <th>Suma= <span id="suma"> </span>
+            <th>Pares= <span id="pares"></span></th>
+            <th>Impares= <span id="impares"> </span></th>
+            <th>Multiplos de 5= <span id="multiplos"> </span></th>
+        </table>
+    </center>
+</body>  
+<script>
+    function calcular(){
+            var suma = 0;
+            var pares = 0;
+            var multiplos= 0;
+            var numeros = "";
+            var n = document.getElementById("numero").value;
+        for(var x = 1; x <= n; x++)
+    {
+        if (x < n )
+            numeros += x + ",";
+        else 
+            numeros += x;
+            suma += x;
+        if (x%2 == 0 )
+            pares += 1;
+         if (x%5 == 0) 
+            multiplos += 1;
+    }
+            document.getElementById("suma").innerHTML = "<font color=black>" + suma + "</font>";
+            document.getElementById("pares").innerHTML = "<font color=black>" + pares + "</font>";
+            document.getElementById("impares").innerHTML = "<font color=black>" + (n - pares) + "</font>";
+            document.getElementById("multiplos").innerHTML = "<font color=black>" + multiplos + "</font>";
+            document.getElementById("Numeros").innerHTML = "<font color=black>" + numeros + "</font>";
+    }
+</script>
+   <br>
+   <br>
+<center>
+    <body>
+      <table border="2">
+          <th>
+        <label> Digite un numero </label>
+        <input type="number" id="numero">
+        <button onclick="calcular()">Procesar</button>
+        </th>
+      </table>
+    </body>
+</center>
+
+</html>
+</html>

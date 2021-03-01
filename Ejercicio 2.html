@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 2</title>
+    <style>
+        body{
+            background-color: rgb(195, 0, 255);
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+        }
+    </style>
+    <body>
+        <center>
+            <h1>LISTADO DE NUMEROS Y LETRAS</h1>
+            <hr size="10" color="white">
+            <br>
+            <table border="5">
+                <th>Numero</th><th>Valor Español</th><th> Valor Ingles</th>
+                <tbody id="cuerpo" ></tbody>
+            </table>
+        </center>
+        <script>
+            var salida='';
+            var num=parseInt(prompt("DIGITE UN NUMERO COMPRENDIDO ENTRE EL 1 Y 20", ""));
+            for(i=1; i<=num; i++){
+                salida+='<tr><td>'+i+ '</td><td>'+cantidadLetras(i)+'</td><td>'+cantidadLetrasIngles(i)+'</td></tr>';
+            }
+            function cantidadLetras(num){
+                var letra1='';
+                switch(num){
+                    case 1:letra='UNO'; break; 
+                    case 2:letra='DOS'; break;
+                    case 3:letra='TRES'; break;
+                    case 4:letra='CUATRO'; break;
+                    case 5:letra='CINCO'; break;
+                    case 6:letra='SEIS'; break;
+                    case 7:letra='SIETE'; break;
+                    case 8:letra='OCHO'; break;
+                    case 9:letra='NUEVE'; break;
+                    case 10:letra='DIEZ'; break;
+                    case 11:letra='ONCE'; break;
+                    case 12:letra='DOCE'; break;
+                    case 13:letra='TRECE'; break;
+                    case 14:letra='CATORCE'; break;
+                    case 15:letra='QUINCE'; break;
+                    case 16:letra='DIECISEIS'; break;
+                    case 17:letra='DIECISIETE'; break;
+                    case 18:letra='DIECIOCHO'; break;
+                    case 19:letra='DIECINUEVE'; break;
+                    case 20:letra='VEINTE'; break;
+                }
+                return letra;
+            }
+    
+    
+        function cantidadLetrasIngles(num){
+                var letra1='';
+                switch(num){
+                    case 1:letra='ONE'; break; 
+                    case 2:letra='TWO'; break;
+                    case 3:letra='THREE'; break;
+                    case 4:letra='FOUR'; break;
+                    case 5:letra='FIVE'; break;
+                    case 6:letra='SIX'; break;
+                    case 7:letra='SEVEN'; break;
+                    case 8:letra='EIGHT'; break;
+                    case 9:letra='NINE'; break;
+                    case 10:letra='TEN'; break;
+                    case 11:letra='ELEVEN'; break;
+                    case 12:letra='TWELVE'; break;
+                    case 13:letra='THIRTEEN'; break;
+                    case 14:letra='FOURTEEN'; break;
+                    case 15:letra='FIFTEEN'; break;
+                    case 16:letra='SIXTEEN'; break;
+                    case 17:letra='SEVENTEEN'; break;
+                    case 18:letra='EIGHTEEN'; break;
+                    case 19:letra='NINETEEN'; break;
+                    case 20:letra='TWENTY'; break;
+                }
+                return letra;
+            }
+            document.getElementById("cuerpo").innerHTML=salida;
+        </script>
+    </body>
+    </html>

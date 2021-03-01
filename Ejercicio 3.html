@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 3</title>
+    <style>
+        body{
+            background-color: rgb(37, 22, 253);
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+        }
+    </style>
+<body>
+    <Center>
+        <main>
+            <div class="container">
+                <h1>USO DEL CICLO WHILE</h1>
+                <hr size="10" color="black">
+                <br>
+            <table border="1">
+              <th>
+                <input name="num" type="text" id="numero" 
+                placeholder="Digita cero para finalizar" 
+                autofocus onKeypress="if (event.keyCode  45 || event.keyCode  57) event.returnValue = false;">
+                <button id="act" onclick="guardar()"> OK </button>
+              </th>
+            </table>
+                
+            </div>
+            <br>
+            <br>
+            <table border="4">
+                <th>NUMEROS DIGITADOS</th>
+                <tbody id="ver">
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <table border="4">
+                <th>CANTIDAD DE NUMEROS</th><tbody id="cant"></tbody>
+            
+               <th>SUMATORIA TOTAL</th> <tbody id="suma"></tbody>
+            
+                <th>PROMEDIO TOTAL</th><tbody id="prom"></tbody>
+            </table>
+        </center>
+        </main>
+    
+        <script>
+    function ocultar() {
+        document.getElementById('act').style.display = 'none'
+        document.getElementById('numero').style.display = 'none'
+    }
+    
+    var num = [];
+    
+    function guardar() {
+    
+        var n = document.getElementById('numero').value;
+        if (n == 0) {
+            resultado()
+            ocultar()
+        }
+        num.push(n);
+        document.getElementById('numero').value = "";
+    }
+    
+    function resultado() {
+        var result = "";
+        var i = 0;
+        var par = 0;
+        var impar = 0;
+        var sum = 0;
+        
+    
+    while (i < num.length) {
+        result += "<tr><td>" + num[i] + "</td></tr>";
+        sum = sum + parseInt(num[i])
+        var prom=parseInt(sum)/parseInt(num.length);
+    
+    if (num[i] % 2 == 0) {
+                par++;
+    } else
+        impar++;
+        var i = i + 1;
+    }
+    
+        console.log(par);
+        document.getElementById('ver').innerHTML = result;
+        document.getElementById('cant').innerHTML = "<tr><td>" + num.length + "</td></tr>";
+        document.getElementById('suma').innerHTML = "<tr><td>" + sum + "</td></tr>";
+        document.getElementById('prom').innerHTML = "<tr><td>" + prom + "</td></tr>";
+    }
+        </script>
+</body>
+    
+</html>
